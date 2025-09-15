@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.layout.LastBaseline
+import androidx.compose.ui.layout.FirstBaseline
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +49,8 @@ fun MainScreen(modifier: Modifier = Modifier) {
         )
         Text(
             text = "Small Text",
-            Modifier.alignByBaseline(),
+            modifier = Modifier.paddingFrom(
+                alignmentLine = FirstBaseline, before = 80.dp, after = 0.dp),
             fontSize = 32.sp,
             fontWeight = FontWeight.Bold,
         )
